@@ -1,18 +1,67 @@
 //1 + 2 + 3 ... + 9 + 10
-function demorada(numero){
-  let p = new Promise(function(resolve, reject){
-    let res = 0
-    for (let i = 1; i <= numero; i++)
-      res += i
-    resolve(res)
-  })
-  return p
+//reimplementar a rapidinha
+//mas não vale falar Promise.resolve nem Promise.reject
+function rapidinha(numero){
+  
 }
-//then: especificamos a função que executa quando a computação terminar com sucesso
-//catch: especificamos a função que executa quando a computação terminar com erro
-demorada(10)
-.then((resultado) => console.log(resultado))
-.catch((erro) => console.log(erro))
+// function rapidinha (numero){
+//   return numero >= 0 ? 
+//         Promise.resolve(numero / 2 * (numero + 1))
+//         : 
+//         Promise.reject('Número deve ser pelo menos zero')
+// }
+
+rapidinha(10)
+.then(res => console.log(`Deu certo: ${res}`))
+.catch(erro => console.log(`Falhou: ${erro}`));
+// function demorada(numero){*
+//   const p = new Promise(function(resolve, reject){
+//     if ( numero >= 0){
+//       let res = 0;
+//       for (let i = 1; i <= numero; i++)
+//         res += i;
+//       resolve(res);
+//     }
+//     else{
+//       reject(`${numero} deve ser pelo menos zero`);
+//     }
+//   });
+//   return p;
+// }
+
+// const minhaPromise = demorada(10);
+// minhaPromise
+// .then((resultado) => {
+//   console.log(`Deu certo: ${resultado}.`)
+// })
+// .catch((erro) => {
+//   console.log(`Não deu certo: ${erro}`)
+// })
+
+// demorada(-2)
+// .then(res => console.log(`Deu certo: ${res}`))
+// .catch(erro => console.log(`Falhou: ${erro}`))
+
+
+
+
+
+
+
+// function demorada(numero){
+//   let p = new Promise(function(resolve, reject){
+//     let res = 0
+//     for (let i = 1; i <= numero; i++)
+//       res += i
+//     resolve(res)
+//   })
+//   return p
+// }
+// //then: especificamos a função que executa quando a computação terminar com sucesso
+// //catch: especificamos a função que executa quando a computação terminar com erro
+// demorada(10)
+// .then((resultado) => console.log(resultado))
+// .catch((erro) => console.log(erro))
 
 // function f(){
 //   return 2
